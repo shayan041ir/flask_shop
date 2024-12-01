@@ -10,6 +10,8 @@ flask-login = "*"
 flask-migrate = "*"
 flask-mysql = "*"
 flask-wtf = "*"
+email-validator = "*"
+flask-mysqldb = "*"
 
 [dev-packages]
 
