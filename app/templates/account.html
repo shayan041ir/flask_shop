@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="text-center">Your Orders</h2>
+        {% if orders %}
+            <ul class="list-group">
+                {% for order in orders %}
+                    <li class="list-group-item">
+                        <strong>Order ID:</strong> {{ order.id }} <br>
+                        <strong>Date:</strong> {{ order.date_created.strftime('%Y-%m-%d %H:%M:%S') }} <br>
+                        <strong>Total:</strong> ${{ order.total_price }}
+                        <ul>
+                            {% for item in order.items %}
+                                <li>
+                                    {{ item.product.name }} - ${{ item.product.price }} (x{{ item.quantity }})
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-center">You have no orders yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -9,6 +9,7 @@ mysqlclient = "*"
 flask-login = "*"
 flask-migrate = "*"
 flask-mysql = "*"
+flask-wtf = "*"
 
 [dev-packages]
 
